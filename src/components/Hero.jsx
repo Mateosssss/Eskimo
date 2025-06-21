@@ -1,5 +1,6 @@
 import React from 'react';
 import './Hero.css';
+import heroImage from '/images/hero2.png';
 
 const Hero = () => {
   return (
@@ -15,7 +16,7 @@ const Hero = () => {
       </div>
       <div className="hero-right">
         <img 
-          src="/images/hero2.png" 
+          src={heroImage} 
           alt="Rzemieślnicze lody Eskimo" 
           className="hero-image"
         />

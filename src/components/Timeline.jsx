@@ -1,5 +1,6 @@
 import React from 'react';
 import './Timeline.css';
+import zalozenieImage from '/images/timeline/zalozenie.jpeg';
 
 const Timeline = () => {
   const timelineEvents = [
@@ -7,7 +8,7 @@ const Timeline = () => {
       year: '1947',
       title: 'Założenie firmy',
       description: 'Rodzina Kowalskich zakłada pierwszą lodziarnię w centrum miasta.',
-      image: '/images/timeline/zalozenie.jpeg'
+      image: zalozenieImage
     },
     {
       year: '1960',

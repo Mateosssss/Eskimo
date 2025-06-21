@@ -1,5 +1,6 @@
 import React from 'react';
 import './Flavors.css';
+import lodyImage from '/images/lody.jpg';
 
 const Flavors = () => {
     const flavorList = [
@@ -26,7 +27,7 @@ const Flavors = () => {
         
         <div className="flavors-image-container">
           <img 
-            src="/images/lody.jpg" 
+            src={lodyImage} 
             alt="Rzemieślnicze lody Eskimo" 
             className="flavors-image"
             onError={(e) => {
