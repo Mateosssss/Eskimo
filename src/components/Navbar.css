@@ -74,6 +74,17 @@
     color: #9A2A2A;
 }
 
+/* Ensure proper sizing on larger screens */
+@media (min-width: 1200px) {
+    .header-main-title {
+        font-size: 5.5rem;
+    }
+    
+    .nav-link {
+        font-size: 1rem;
+    }
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
     .header-container {

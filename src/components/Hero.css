@@ -60,6 +60,22 @@
     mix-blend-mode: multiply;
 }
 
+/* Ensure proper sizing on larger screens */
+@media (min-width: 1200px) {
+    .hero-title-main {
+        font-size: 5.5rem;
+    }
+    
+    .hero-subtitle-main {
+        font-size: 1.2rem;
+    }
+    
+    .hero-cta-button {
+        font-size: 1.1rem;
+        padding: 18px 40px;
+    }
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
     .hero-container {
