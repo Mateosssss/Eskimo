@@ -4,14 +4,19 @@ import lodyImage from '/images/lody.jpg';
 
 const Flavors = () => {
     const flavorList = [
-        "Śmietanka",
-        "Czekolada",
-        "Truskawka",
-        "Wanilia z Madagaskaru",
-        "Słony Karmel",
-        "Pistacja",
-        "Guma Balonowa",
-        "Sorbet Malinowy"
+      "Cytrynowe",
+      "Truskawkowe",
+      "Malaga",
+      "Wanilia",
+      "Karmelowe",
+      "Kakaowe",
+      "Bakaliowe",
+      "Sernikowe",
+      "Śmietankowe",
+      "Wiśniowe",
+      "Jagodowe",
+      "Kasztanowe",
+      "Czarna Porzeczka"
     ];
 
   return (

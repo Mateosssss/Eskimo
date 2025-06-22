@@ -94,7 +94,7 @@ const Reviews = () => {
         <div className="reviews-cta">
           <p>Masz własną opinię? Podziel się nią z nami!</p>
           <a 
-            href="https://maps.google.com" 
+            href="https://g.page/r/CRvLQTJZKcTlEAE/review" 
             target="_blank" 
             rel="noopener noreferrer" 
             className="review-button"

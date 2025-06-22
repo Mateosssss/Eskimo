@@ -50,10 +50,10 @@ const Contact = () => {
             <div className="address-area">
               <div className="sender-address">
                 <strong>Eskimo Lody</strong><br />
-                ul. Lodowa 15<br />
-                00-001 Warszawa<br />
+                Stanisława Wyspiańskiego 22<br />
+                80-434 Gdańsk<br />
                 Polska<br /><br />
-                Tel: +48 123 456 789<br />
+                Tel: +48 58 341 89 10<br />
                 Email: kontakt@eskimo-lody.pl
               </div>
             </div>

@@ -1,38 +1,28 @@
 import React from 'react';
 import './Timeline.css';
 import zalozenieImage from '/images/timeline/zalozenie.jpeg';
+import nowaLokalizacjaImage from '/images/timeline/nowa_lokalizacja.png';
+import przejecieImage from '/images/timeline/przejecie.png';
 
 const Timeline = () => {
   const timelineEvents = [
     {
       year: '1947',
       title: 'Założenie firmy',
-      description: 'Rodzina Kowalskich zakłada pierwszą lodziarnię w centrum miasta.',
+      description: 'Rodzina Gawlik zakłada pierwszą lodziarnię w Oliwie',
       image: zalozenieImage
     },
     {
-      year: '1960',
-      title: 'Rozwój receptur',
-      description: 'Powstają pierwsze autorskie receptury lodów, które przetrwają do dziś.',
-      image: null
-    },
-    {
-      year: '1985',
+      year: '1990',
       title: 'Nowa lokalizacja',
-      description: 'Przeprowadzka do większego lokalu i modernizacja sprzętu.',
-      image: null
+      description: 'Syn Józefa Andrzej Gawlik zakłada nową lodziarnię we Wrzeszczu',
+      image: nowaLokalizacjaImage
     },
     {
-      year: '2000',
-      title: 'Tradycja i nowoczesność',
-      description: 'Łączymy tradycyjne receptury z nowoczesnymi technologiami.',
-      image: null
-    },
-    {
-      year: '2023',
-      title: '75 lat tradycji',
-      description: 'Obchodzimy 75-lecie istnienia firmy, zachowując autentyczny smak.',
-      image: null
+      year: '2020',
+      title: 'Przejęcie przez syna',
+      description: 'Syn Piotr Gawlik przejmuje lody Eskimo',
+      image: przejecieImage
     }
   ];
 
