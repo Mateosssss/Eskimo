@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import emailjs from '@emailjs/browser';
 import './Contact.css';
 
 const Contact = () => {
@@ -10,6 +11,13 @@ const Contact = () => {
   });
 
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
+  const [error, setError] = useState('');
+
+  // Inicjalizacja EmailJS
+  useEffect(() => {
+    emailjs.init('_tW4Sr4Nut3CmrT1V');
+  }, []);
 
   const handleChange = (e) => {
     setFormData({
@@ -18,11 +26,34 @@ const Contact = () => {
     });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // Tutaj można dodać logikę wysyłania formularza
-    console.log('Form submitted:', formData);
-    setIsSubmitted(true);
+    setIsLoading(true);
+    setError('');
+
+    try {
+      const templateParams = {
+        from_name: formData.name,
+        from_email: formData.email,
+        subject: formData.subject,
+        message: formData.message,
+        to_name: 'Eskimo Lody',
+        to_email: 'kontakt@eskimo-lody.pl'
+      };
+      
+      await emailjs.send(
+        'service_yvej7u9',
+        'template_xdkdst9',
+        templateParams,
+        '_tW4Sr4Nut3CmrT1V'
+      );
+
+      setIsSubmitted(true);
+    } catch (error) {
+      setError(`Błąd wysyłania wiadomości: ${error.text || error.message || 'Nieznany błąd'}`);
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   if (isSubmitted) {
@@ -31,6 +62,15 @@ const Contact = () => {
         <div className="confirmation-message">
           <h2>Dziękujemy za wiadomość!</h2>
           <p>Odpowiemy na Twoją wiadomość w najbliższym czasie.</p>
+          <button 
+            onClick={() => {
+              setIsSubmitted(false);
+              setFormData({ name: '', email: '', subject: '', message: '' });
+            }}
+            className="submit-btn"
+          >
+            Wyślij kolejną wiadomość
+          </button>
         </div>
       </section>
     );
@@ -59,6 +99,8 @@ const Contact = () => {
             </div>
             
             <div className="contact-form">
+              {error && <div className="error-message">{error}</div>}
+              
               <div className="form-group">
                 <label htmlFor="name">Imię i nazwisko</label>
                 <input
@@ -68,6 +110,7 @@ const Contact = () => {
                   value={formData.name}
                   onChange={handleChange}
                   required
+                  disabled={isLoading}
                 />
               </div>
               
@@ -80,6 +123,7 @@ const Contact = () => {
                   value={formData.email}
                   onChange={handleChange}
                   required
+                  disabled={isLoading}
                 />
               </div>
               
@@ -92,6 +136,7 @@ const Contact = () => {
                   value={formData.subject}
                   onChange={handleChange}
                   required
+                  disabled={isLoading}
                 />
               </div>
               
@@ -104,11 +149,16 @@ const Contact = () => {
                   value={formData.message}
                   onChange={handleChange}
                   required
+                  disabled={isLoading}
                 ></textarea>
               </div>
               
-              <button type="submit" className="submit-btn">
-                Wyślij wiadomość
+              <button 
+                type="submit" 
+                className="submit-btn"
+                disabled={isLoading}
+              >
+                {isLoading ? 'Wysyłanie...' : 'Wyślij wiadomość'}
               </button>
             </div>
           </form>
